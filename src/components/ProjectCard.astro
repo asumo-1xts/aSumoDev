@@ -9,38 +9,21 @@ interface Props {
 }
 
 const { project} = Astro.props;
-
-function formatPeriod(startDate: Date, endDate?: Date) {
-  const options: Intl.DateTimeFormatOptions = {
-    month: "short",
-    year: "numeric",
-  };
-  const start = startDate.toLocaleDateString("en-US", options);
-  const end = endDate
-    ? endDate.toLocaleDateString("en-US", options)
-    : "Present";
-  return `${start} - ${end}`;
-}
 ---
 
 <article class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
-  <a
-    class="hover:opacity-80 transition-opacity"
-    href={`/projects/${project.id}`}
-  >
-    <figure class="aspect-video">
-      <Image
-        src={project.data.image}
-        alt={project.data.title}
-        class="w-full h-full object-cover"
-        width={600}
-        height={400}
-      />
-    </figure>
-  </a>
+  <figure class="aspect-video">
+    <Image
+      src={project.data.image}
+      alt={project.data.title}
+      class="w-full h-full object-cover"
+      width={600}
+      height={400}
+    />
+  </figure>
   <div class="card-body">
-    <h3 class="card-title hover:text-primary transition-colors">
-      <a href={`/projects/${project.id}`}>{project.data.title}</a>
+    <h3 class="card-title">
+      {project.data.title}
     </h3>
     <p class="text-base-content/80">{project.data.description}</p>
     <div class="card-actions justify-end mt-4 gap-2">
@@ -78,11 +61,6 @@ function formatPeriod(startDate: Date, endDate?: Date) {
           </a>
         )
       }
-      <div class="tooltip" data-tip="View project details">
-        <a href={`/projects/${project.id}`} class="btn btn-sm btn-primary">
-          <Eye class="size-4" />
-        </a>
-      </div>
     </div>
   </div>
 </article>

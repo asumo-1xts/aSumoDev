@@ -2,19 +2,6 @@ import { defineCollection } from 'astro:content'
 import { z } from 'astro/zod'
 import { glob } from 'astro/loaders'
 
-const contentSidebarSchema = z
-  .object({
-    discriminant: z.boolean(),
-    value: z
-      .object({
-        show: z.boolean().optional().default(true),
-        position: z.enum(['left', 'right']).optional().default('right')
-      })
-      .nullable()
-      .optional()
-  })
-  .optional()
-
 // Hero singleton
 const hero = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdoc,yaml}', base: './src/content/hero' }),
@@ -44,20 +31,6 @@ const hero = defineCollection({
     })
 })
 
-// Project Categories collection
-const projectCategories = defineCollection({
-  loader: glob({
-    pattern: '**/*.{md,mdoc,yaml}',
-    base: './src/content/projectCategories'
-  }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional(),
-    icon: z.string().optional(),
-    sortOrder: z.number().optional().default(0)
-  })
-})
-
 // Projects collection
 const projects = defineCollection({
   loader: glob({
@@ -71,27 +44,8 @@ const projects = defineCollection({
       title: z.string(),
       description: z.string(),
       image: image(),
-      startDate: z.coerce.date(),
-      endDate: z.coerce.date().optional(),
       demoLink: z.url().optional(),
-      sourceLink: z.url().optional(),
-      contentSidebar: contentSidebarSchema
-    })
-})
-
-// Blog collection
-const blog = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdoc,yaml}', base: './src/content/blog' }),
-  schema: ({ image }) =>
-    z.object({
-      published: z.boolean().optional().default(true),
-      title: z.string(),
-      description: z.string(),
-      image: image(),
-      publishDate: z.coerce.date(),
-      updatedDate: z.coerce.date().optional(),
-      tags: z.array(z.string()).optional(),
-      contentSidebar: contentSidebarSchema
+      sourceLink: z.url().optional()
     })
 })
 
@@ -118,27 +72,19 @@ const general = defineCollection({
           'GraduationCap',
           'Link'
         ]),
-        label: z.string(),
-        displayOn: z.enum(['both', 'dock', 'fab']).optional().default('both')
+        label: z.string()
       })
     ),
     showProjectsSection: z.boolean(),
     projectsLayout: z
       .enum(['grid', 'tabs-horizontal', 'tabs-vertical'])
       .optional()
-      .default('grid'),
-    showContentSidebar: z.boolean().optional().default(true),
-    contentSidebarPosition: z
-      .enum(['left', 'right'])
-      .optional()
-      .default('right')
+      .default('grid')
   })
 })
 
 export const collections = {
   hero,
-  projectCategories,
   projects,
-  blog,
   general
 }

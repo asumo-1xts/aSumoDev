@@ -148,16 +148,6 @@ export default config({
               label: 'Tooltip Label',
               description: 'Label shown on hover',
               validation: { isRequired: true }
-            }),
-            displayOn: fields.select({
-              label: 'Display On',
-              description: 'Where this link should be displayed',
-              options: [
-                { label: 'Both (Dock & Fab)', value: 'both' },
-                { label: 'Only Dock (Mobile)', value: 'dock' },
-                { label: 'Only Fab (Desktop)', value: 'fab' }
-              ],
-              defaultValue: 'dock'
             })
           }),
           {
@@ -209,14 +199,6 @@ export default config({
           publicPath: '@assets/projects/',
           validation: { isRequired: true },
           description: 'Main project image'
-        }),
-        startDate: fields.date({
-          label: 'Start Date',
-          validation: { isRequired: true }
-        }),
-        endDate: fields.date({
-          label: 'End Date',
-          description: 'Leave empty if ongoing'
         }),
         demoLink: fields.url({
           label: 'Demo Link',
