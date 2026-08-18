@@ -72,14 +72,14 @@ Visit `http://localhost:4321` to see your portfolio!
 
 All commands are run from the root of the project:
 
-| Command | Action |
-| :--- | :--- |
-| `npm install` | Install dependencies |
-| `npm run dev` | Start dev server at `localhost:4321` |
-| `npm run build` | Build production site to `./dist/` |
-| `npm run preview` | Preview production build locally |
-| `npm run check` | Run TypeScript, Astro, and content checks |
-| `npm run astro ...` | Run Astro CLI commands |
+| Command             | Action                                    |
+| :------------------ | :---------------------------------------- |
+| `npm install`       | Install dependencies                      |
+| `npm run dev`       | Start dev server at `localhost:4321`      |
+| `npm run build`     | Build production site to `./dist/`        |
+| `npm run preview`   | Preview production build locally          |
+| `npm run check`     | Run TypeScript, Astro, and content checks |
+| `npm run astro ...` | Run Astro CLI commands                    |
 
 ## ⚙️ Configuration
 
@@ -125,11 +125,11 @@ On the `/projects` page, projects are grouped under their category heading. Unca
 
 Choose from 3 layout styles for the projects listing page in **General Settings** → **Projects Page Layout**:
 
-| Layout | Description |
-| :--- | :--- |
-| **Grid** (default) | Stacked category sections with card grids |
+| Layout              | Description                                                         |
+| :------------------ | :------------------------------------------------------------------ |
+| **Grid** (default)  | Stacked category sections with card grids                           |
 | **Horizontal Tabs** | DaisyUI `tabs-border` with an **All** tab followed by category tabs |
-| **Sidebar** | DaisyUI `menu` with an **All** item followed by category items |
+| **Sidebar**         | DaisyUI `menu` with an **All** item followed by category items      |
 
 ### Content Sidebar
 
@@ -161,6 +161,7 @@ You can add clickable links inside the Hero section's **Title** and **Descriptio
 ```
 
 **Example:**
+
 ```
 Astro Portfolio Template built with [link:https://daisyui.com]🌼 DaisyUI[/link]
 ```
@@ -182,14 +183,15 @@ extraLinks:
   - link: /blog/guide
     icon: BookOpen
     label: Guide
-    displayOn: both    # Options: both, dock, fab
+    displayOn: both # Options: both, dock, fab
   - link: /resume.pdf
     icon: FileText
     label: Resume
-    displayOn: fab     # Only show on desktop FAB
+    displayOn: fab # Only show on desktop FAB
 ```
 
 The `displayOn` option controls where each link appears:
+
 - `both` - Shows on both FAB (desktop) and Dock (mobile)
 - `fab` - Only shows on the floating action button (desktop)
 - `dock` - Only shows on the bottom dock (mobile)
@@ -269,11 +271,13 @@ Keystatic is a modern, Git-based headless CMS that provides a user-friendly inte
 #### Accessing the Editor
 
 1. Start the development server:
+
    ```bash
    npm run dev
    ```
 
 2. Navigate to the admin panel:
+
    ```
    http://localhost:4321/keystatic
    ```
@@ -283,6 +287,7 @@ Keystatic is a modern, Git-based headless CMS that provides a user-friendly inte
 #### What is Keystatic?
 
 Keystatic is a **Git-based CMS** that:
+
 - Stores content as files in your repository (not in a database)
 - Provides a beautiful visual editor with live preview
 - Works with local development and GitHub/GitLab workflows
@@ -294,10 +299,12 @@ Keystatic is a **Git-based CMS** that:
 #### Content Types in Keystatic
 
 **Singletons** (one-per-site content):
+
 - **Hero Section** - Your name, title, avatar, social links
 - **About Section** - Personal bio with photo (supports Markdown)
 
 **Collections** (multiple entries):
+
 - **Blog Posts** - Published articles and unlisted drafts with cover images, tags, and rich media embeds
 - **Projects** - Portfolio items with screenshots, descriptions, and tech stacks
 - **Work Experience** - Timeline of employment history
@@ -333,11 +340,13 @@ Keystatic is a **Git-based CMS** that:
 #### Deployment Modes
 
 **Local Mode (Current Setup)**
+
 - Content stored in `src/content/` directory
 - Changes saved as file system edits
 - Perfect for personal portfolios and single-user sites
 
 **GitHub/Cloud Mode** (Future upgrade)
+
 - Content synced with GitHub repository
 - Enable collaboration with non-technical users
 - Manage content from anywhere via hosted admin panel
@@ -353,12 +362,12 @@ Create a new file in `src/content/blog/`:
 
 ```markdown
 ---
-title: "Your Post Title"
-description: "Brief description for SEO"
-image: "./featured-image.png"
+title: 'Your Post Title'
+description: 'Brief description for SEO'
+image: './featured-image.png'
 published: true
-publishDate: "2024-01-25"
-tags: ["Tag1", "Tag2"]
+publishDate: '2024-01-25'
+tags: ['Tag1', 'Tag2']
 ---
 
 Your content here...
@@ -367,6 +376,7 @@ Your content here...
 Set `published: false` to keep the article as a draft. Drafts remain editable in Keystatic but are excluded from the homepage, the Blog page, and direct public access.
 
 **File Extensions:**
+
 - `.md` - Standard Markdown for regular blog posts
 - `.mdoc` - Markdoc with component support (required for media embeds)
 
@@ -376,12 +386,15 @@ Set `published: false` to keep the article as a draft. Drafts remain editable in
 
 ```markdown
 # Spotify Embed
+
 {% Spotify url="https://open.spotify.com/track/..." /%}
 
 # YouTube Video
+
 {% YouTube url="https://youtube.com/watch?v=..." /%}
 
 # Twitter/X Post
+
 {% Twitter url="https://x.com/username/status/..." /%}
 ```
 
@@ -391,16 +404,16 @@ Create a new file in `src/content/projects/`:
 
 ```markdown
 ---
-featured: true  # Show on homepage (max 3 featured projects)
-category: real-projects  # Category slug (managed in Project Categories)
-title: "Project Name"
-description: "Brief description"
-image: "./screenshot.png"
-startDate: "2023-01-15"
-endDate: "2023-06-30"  # Optional (omit for ongoing)
-skills: ["React", "Node.js", "MongoDB"]
-demoLink: "https://demo.example.com"  # Optional
-sourceLink: "https://github.com/..."  # Optional
+featured: true # Show on homepage (max 3 featured projects)
+category: real-projects # Category slug (managed in Project Categories)
+title: 'Project Name'
+description: 'Brief description'
+image: './screenshot.png'
+startDate: '2023-01-15'
+endDate: '2023-06-30' # Optional (omit for ongoing)
+skills: ['React', 'Node.js', 'MongoDB']
+demoLink: 'https://demo.example.com' # Optional
+sourceLink: 'https://github.com/...' # Optional
 ---
 
 Detailed project description...
@@ -414,14 +427,14 @@ Create a new file in `src/content/work/`:
 
 ```markdown
 ---
-title: "Company Name"
-subtitle: "Job Title"
-location: "City, Country"  # Optional
-startDate: "2020-01-15"
-endDate: "2023-06-30"  # Optional (omit for current position)
-logo: "https://company-logo-url.com"  # Optional
-link: "https://company-website.com"   # Optional
-skills: ["React", "TypeScript", "Node.js"]  # Optional
+title: 'Company Name'
+subtitle: 'Job Title'
+location: 'City, Country' # Optional
+startDate: '2020-01-15'
+endDate: '2023-06-30' # Optional (omit for current position)
+logo: 'https://company-logo-url.com' # Optional
+link: 'https://company-website.com' # Optional
+skills: ['React', 'TypeScript', 'Node.js'] # Optional
 ---
 
 Job description and achievements...
@@ -435,12 +448,12 @@ Create a new file in `src/content/education/`:
 
 ```markdown
 ---
-title: "Institution Name"
-subtitle: "Degree/Course"
-startDate: "2015-09-01"
-endDate: "2019-06-30"  # Optional
-logo: "https://institution-logo-url.com"  # Optional
-link: "https://institution.edu"  # Optional
+title: 'Institution Name'
+subtitle: 'Degree/Course'
+startDate: '2015-09-01'
+endDate: '2019-06-30' # Optional
+logo: 'https://institution-logo-url.com' # Optional
+link: 'https://institution.edu' # Optional
 ---
 
 Educational details and achievements...
@@ -452,13 +465,13 @@ Create a new file in `src/content/hackathons/`:
 
 ```markdown
 ---
-title: "Hackathon Name"
-location: "City, State or Virtual"
-description: "Brief hackathon summary"
-startDate: "2023-11-23"
-endDate: "2023-11-25"  # Optional
-logo: "https://hackathon-logo-url.com"  # Optional
-sourceLink: "https://github.com/..."  # Optional
+title: 'Hackathon Name'
+location: 'City, State or Virtual'
+description: 'Brief hackathon summary'
+startDate: '2023-11-23'
+endDate: '2023-11-25' # Optional
+logo: 'https://hackathon-logo-url.com' # Optional
+sourceLink: 'https://github.com/...' # Optional
 ---
 
 Detailed information about the hackathon and your project...
@@ -467,11 +480,12 @@ Detailed information about the hackathon and your project...
 #### Singletons (Hero & About)
 
 **Hero** (`src/content/hero/index.yaml`):
+
 ```yaml
 name: Your Name
-title: "Your Title with [link:https://example.com]a link[/link]"
+title: 'Your Title with [link:https://example.com]a link[/link]'
 description: Brief description of your portfolio
-avatar: "./avatar.png"
+avatar: './avatar.png'
 location: 🌍 Your Location
 socialLinks:
   - url: https://github.com/username
@@ -481,11 +495,12 @@ socialLinks:
 ```
 
 **About** (`src/content/about/index.md`):
+
 ```markdown
 ---
-title: "About Me"
-photo: "./photo.png"
-link: "https://linkedin.com/in/username"  # Optional - used for "More Work Experience" button
+title: 'About Me'
+photo: './photo.png'
+link: 'https://linkedin.com/in/username' # Optional - used for "More Work Experience" button
 ---
 
 Your about content with **Markdown** formatting...
@@ -494,15 +509,18 @@ Your about content with **Markdown** formatting...
 ### Content Tips
 
 **Image Paths:**
+
 - Use relative paths like `"./image.png"` for local images
 - Images are automatically optimized by Astro
 - Supported formats: PNG, JPG, WEBP, AVIF, SVG
 
 **Dates:**
+
 - Format: `YYYY-MM-DD` (e.g., "2024-01-15")
 - Leave `endDate` empty for ongoing positions/projects
 
 **Skills/Tags:**
+
 - Arrays of strings: `["React", "TypeScript", "Node.js"]`
 - Display as badges in the UI
 
@@ -518,6 +536,7 @@ Your about content with **Markdown** formatting...
 For remote content editing from anywhere, you can enable Keystatic's GitHub mode:
 
 #### Prerequisites
+
 - GitHub account
 - Repository hosted on GitHub
 
@@ -536,11 +555,13 @@ For remote content editing from anywhere, you can enable Keystatic's GitHub mode
 2. **Set Environment Variables**
 
    Copy `.env.example` to `.env`:
+
    ```bash
    cp .env.example .env
    ```
 
    Fill in your values:
+
    ```bash
    KEYSTATIC_GITHUB_CLIENT_ID=your_client_id_here
    KEYSTATIC_GITHUB_CLIENT_SECRET=your_client_secret_here
@@ -551,6 +572,7 @@ For remote content editing from anywhere, you can enable Keystatic's GitHub mode
    ```
 
 3. **Restart Development Server**
+
    ```bash
    npm run dev
    ```
@@ -583,14 +605,20 @@ The configuration automatically detects which mode to use based on environment v
 Edit theme settings via Keystatic CMS at `/keystatic` or directly in `src/content/general/index.yaml`:
 
 ```yaml
-enableThemeSelector: true  # Dropdown with 6 themes (false = simple toggle)
+enableThemeSelector: true # Dropdown with 6 themes (false = simple toggle)
 ```
 
 To change available themes, edit `src/styles/global.css`:
 
 ```css
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark, synthwave, retro, valentine, dim;
+  themes:
+    light --default,
+    dark --prefersdark,
+    synthwave,
+    retro,
+    valentine,
+    dim;
 }
 ```
 
@@ -683,6 +711,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 💬 [Discussions](https://github.com/lauroguedes/bloomfolio/discussions)
 
 ---
+
 Please if you find this project helpful, consider giving it a ⭐ on GitHub!
 
 Crafted by an Artisan ⛏️ [Lauro Guedes](https://lauroguedes.dev)

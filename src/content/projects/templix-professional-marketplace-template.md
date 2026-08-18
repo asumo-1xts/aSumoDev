@@ -17,6 +17,7 @@ skills:
 demoLink: https://templix.lwg.workers.dev/
 sourceLink: https://portal.astro.build/themes/templix-professional-marketplace-template/
 ---
+
 ## Features
 
 - 🎯 **Keystatic CMS Integration** - Git-based headless CMS with visual editor, no backend needed

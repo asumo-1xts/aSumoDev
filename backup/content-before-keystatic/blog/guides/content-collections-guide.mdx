@@ -1,9 +1,9 @@
 ---
-title: "Content Collections Guide"
+title: 'Content Collections Guide'
 description: "Learn how to create and manage content in Bloomfolio using Astro's Content Collections. Complete schemas and examples for all 6 collection types."
-image: "../placeholder-blog.png"
-publishDate: "2025-11-02"
-tags: ["Guide", "Content", "Collections"]
+image: '../placeholder-blog.png'
+publishDate: '2025-11-02'
+tags: ['Guide', 'Content', 'Collections']
 ---
 
 ## Understanding Astro Content Collections
@@ -43,18 +43,20 @@ Each collection has a specific schema defined in `src/content.config.ts`. All co
 **File**: `src/content/about/about.md`
 
 **Schema**:
+
 ```yaml
 ---
-title: string              # Section title
-photo?: string            # Optional photo URL
+title: string # Section title
+photo?: string # Optional photo URL
 ---
 ```
 
 **Example**:
+
 ```markdown
 ---
-title: "About Me"
-photo: "https://example.com/photo.jpg"
+title: 'About Me'
+photo: 'https://example.com/photo.jpg'
 ---
 
 I'm a passionate developer who loves building beautiful web experiences.
@@ -73,6 +75,7 @@ to open source projects, or sharing knowledge through blog posts and talks.
 ```
 
 **Tips**:
+
 - Use the photo field for a professional headshot or avatar
 - Write in first person for a personal touch
 - Include markdown formatting for better readability
@@ -87,26 +90,28 @@ to open source projects, or sharing knowledge through blog posts and talks.
 **Location**: `src/content/blog/*.{md,mdx}`
 
 **Schema**:
+
 ```yaml
 ---
-title: string                    # Post title
-description: string              # Brief summary (for SEO)
-image: image()                   # Featured image (relative path)
-publishDate: date                # Publication date
-updatedDate?: date              # Optional last update date
-tags?: string[]                 # Optional tags/categories
+title: string # Post title
+description: string # Brief summary (for SEO)
+image: image() # Featured image (relative path)
+publishDate: date # Publication date
+updatedDate?: date # Optional last update date
+tags?: string[] # Optional tags/categories
 ---
 ```
 
 **Example**:
+
 ```markdown
 ---
-title: "Building Modern Web Apps with Astro"
+title: 'Building Modern Web Apps with Astro'
 description: "Learn how to create fast, content-focused websites using Astro's islands architecture."
-image: "./astro-tutorial.png"
-publishDate: "2024-01-15"
-updatedDate: "2024-01-20"
-tags: ["Astro", "Tutorial", "Web Development"]
+image: './astro-tutorial.png'
+publishDate: '2024-01-15'
+updatedDate: '2024-01-20'
+tags: ['Astro', 'Tutorial', 'Web Development']
 ---
 
 # Building Modern Web Apps with Astro
@@ -116,6 +121,7 @@ Astro is a revolutionary framework for building content-focused websites...
 ## Why Astro?
 
 Astro brings several advantages to modern web development:
+
 - Zero JavaScript by default
 - Component islands architecture
 - Framework-agnostic components
@@ -127,11 +133,13 @@ Let's dive into creating your first Astro project...
 ```
 
 **Image Paths**:
+
 - Use relative paths (`./image.png`) for images in the same folder as your markdown file
 - Images are automatically optimized by Astro
 - Supported formats: PNG, JPG, WEBP, AVIF, SVG
 
 **Best Practices**:
+
 - Write compelling titles that encourage clicks
 - Keep descriptions under 160 characters for SEO
 - Use 2-5 relevant tags per post
@@ -147,30 +155,32 @@ Let's dive into creating your first Astro project...
 **Location**: `src/content/projects/*.md`
 
 **Schema**:
+
 ```yaml
 ---
-title: string                    # Project name
-description: string              # Brief description
-image: image()                   # Project screenshot
-startDate: date                  # When you started
-endDate?: date                  # When finished (omit for ongoing)
-skills: string[]                # Technologies used
-demoLink?: string               # Optional demo URL
-sourceLink?: string             # Optional source code URL
+title: string # Project name
+description: string # Brief description
+image: image() # Project screenshot
+startDate: date # When you started
+endDate?: date # When finished (omit for ongoing)
+skills: string[] # Technologies used
+demoLink?: string # Optional demo URL
+sourceLink?: string # Optional source code URL
 ---
 ```
 
 **Example**:
+
 ```markdown
 ---
-title: "E-Commerce Platform"
-description: "A full-stack e-commerce platform with React and Node.js"
-image: "./ecommerce-screenshot.png"
-startDate: "2023-01-15"
-endDate: "2023-06-30"
-skills: ["React", "Node.js", "PostgreSQL", "Stripe", "Tailwind CSS"]
-demoLink: "https://demo.myproject.com"
-sourceLink: "https://github.com/username/project"
+title: 'E-Commerce Platform'
+description: 'A full-stack e-commerce platform with React and Node.js'
+image: './ecommerce-screenshot.png'
+startDate: '2023-01-15'
+endDate: '2023-06-30'
+skills: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS']
+demoLink: 'https://demo.myproject.com'
+sourceLink: 'https://github.com/username/project'
 ---
 
 ## Overview
@@ -189,11 +199,13 @@ shopping cart, and payment processing.
 ## Technical Implementation
 
 ### Backend
+
 The backend is built with Node.js and Express, utilizing PostgreSQL for data
 persistence. User authentication is handled through JWT tokens with refresh
 token rotation for enhanced security.
 
 ### Frontend
+
 React with TypeScript provides a type-safe development experience. State
 management is handled with Context API and custom hooks for cleaner code.
 
@@ -211,6 +223,7 @@ for live updates and optimistic UI updates for better user experience.
 ```
 
 **Tips for Great Project Descriptions**:
+
 - Start with a clear overview
 - Explain the problem you solved
 - Highlight technical challenges and solutions
@@ -219,12 +232,14 @@ for live updates and optimistic UI updates for better user experience.
 - Add screenshots or demos if available
 
 **Skills Array**:
+
 - List technologies in order of prominence
 - Include frameworks, libraries, and tools
 - Be specific (e.g., "React 18" vs just "React")
 - Limit to 5-8 key technologies
 
 **Ongoing Projects**:
+
 - Omit `endDate` for projects still in development
 - The UI will automatically show "Present"
 
@@ -237,26 +252,28 @@ for live updates and optimistic UI updates for better user experience.
 **Location**: `src/content/work/*.md`
 
 **Schema**:
+
 ```yaml
 ---
-title: string                    # Company name
-subtitle: string                 # Job title/position
-startDate: date                  # Start date
-endDate?: date                  # End date (omit for current position)
-logo?: string                   # Optional company logo URL
-link?: string                   # Optional company website
+title: string # Company name
+subtitle: string # Job title/position
+startDate: date # Start date
+endDate?: date # End date (omit for current position)
+logo?: string # Optional company logo URL
+link?: string # Optional company website
 ---
 ```
 
 **Example**:
+
 ```markdown
 ---
-title: "Tech Innovations Inc."
-subtitle: "Senior Full-Stack Developer"
-startDate: "2020-03-01"
-endDate: "2023-08-15"
-logo: "https://company.com/logo.png"
-link: "https://techinnovations.com"
+title: 'Tech Innovations Inc.'
+subtitle: 'Senior Full-Stack Developer'
+startDate: '2020-03-01'
+endDate: '2023-08-15'
+logo: 'https://company.com/logo.png'
+link: 'https://techinnovations.com'
 ---
 
 Led development of customer-facing web applications serving 100K+ daily users.
@@ -280,16 +297,19 @@ React, TypeScript, Node.js, PostgreSQL, Redis, Docker, AWS, GitHub Actions
 ```
 
 **Current Position**:
+
 - Omit `endDate` field entirely for your current job
 - The timeline will automatically display "Present"
 
 **Logo Guidelines**:
+
 - Use company's official logo
 - Host on CDN or use company website URL
 - Square format works best (will be displayed as circle)
 - Recommended size: 200x200px minimum
 
 **Writing Tips**:
+
 - Use action verbs (Led, Implemented, Architected)
 - Quantify achievements with numbers when possible
 - Focus on impact, not just responsibilities
@@ -307,24 +327,25 @@ React, TypeScript, Node.js, PostgreSQL, Redis, Docker, AWS, GitHub Actions
 
 ```yaml
 ---
-title: string                    # Institution name
-subtitle: string                 # Degree/course name
-startDate: date                  # Start date
-endDate?: date                  # Graduation date
-logo?: string                   # Optional institution logo
-link?: string                   # Optional institution website
+title: string # Institution name
+subtitle: string # Degree/course name
+startDate: date # Start date
+endDate?: date # Graduation date
+logo?: string # Optional institution logo
+link?: string # Optional institution website
 ---
 ```
 
 **Example**:
+
 ```markdown
 ---
-title: "University of Technology"
-subtitle: "Bachelor of Science in Computer Science"
-startDate: "2016-09-01"
-endDate: "2020-06-15"
-logo: "https://university.edu/logo.png"
-link: "https://university.edu"
+title: 'University of Technology'
+subtitle: 'Bachelor of Science in Computer Science'
+startDate: '2016-09-01'
+endDate: '2020-06-15'
+logo: 'https://university.edu/logo.png'
+link: 'https://university.edu'
 ---
 
 Graduated with honors. GPA: 3.8/4.0
@@ -357,12 +378,12 @@ You can also use the education collection for professional certifications:
 
 ```markdown
 ---
-title: "AWS"
-subtitle: "AWS Certified Solutions Architect"
-startDate: "2023-06-01"
-endDate: "2026-06-01"  # Expiration date
-logo: "https://aws.amazon.com/certification/certification-prep/logo.png"
-link: "https://aws.amazon.com/certification/"
+title: 'AWS'
+subtitle: 'AWS Certified Solutions Architect'
+startDate: '2023-06-01'
+endDate: '2026-06-01' # Expiration date
+logo: 'https://aws.amazon.com/certification/certification-prep/logo.png'
+link: 'https://aws.amazon.com/certification/'
 ---
 
 Validated expertise in designing distributed systems on AWS.
@@ -384,28 +405,30 @@ Validated expertise in designing distributed systems on AWS.
 **Location**: `src/content/hackathons/*.md`
 
 **Schema**:
+
 ```yaml
 ---
-title: string                    # Hackathon name
-location: string                 # City, Country or "Virtual"
-description: string              # Brief description
-startDate: date                  # Start date
-endDate?: date                  # End date (for multi-day events)
-logo?: string                   # Optional hackathon logo
-sourceLink?: string             # Optional project repository
+title: string # Hackathon name
+location: string # City, Country or "Virtual"
+description: string # Brief description
+startDate: date # Start date
+endDate?: date # End date (for multi-day events)
+logo?: string # Optional hackathon logo
+sourceLink?: string # Optional project repository
 ---
 ```
 
 **Example**:
+
 ```markdown
 ---
-title: "TechCrunch Disrupt Hackathon"
-location: "San Francisco, CA"
-description: "Built an AI-powered code review assistant in 48 hours"
-startDate: "2023-09-15"
-endDate: "2023-09-17"
-logo: "https://techcrunch.com/hackathon-logo.png"
-sourceLink: "https://github.com/username/hackathon-project"
+title: 'TechCrunch Disrupt Hackathon'
+location: 'San Francisco, CA'
+description: 'Built an AI-powered code review assistant in 48 hours'
+startDate: '2023-09-15'
+endDate: '2023-09-17'
+logo: 'https://techcrunch.com/hackathon-logo.png'
+sourceLink: 'https://github.com/username/hackathon-project'
 ---
 
 ## Project: CodeReview AI
@@ -446,6 +469,7 @@ suggestions and identifies potential bugs using GPT-4 and static analysis.
 ```
 
 **Tips for Hackathon Entries**:
+
 - Clearly describe what you built and why
 - Highlight your specific contributions
 - Include team size and collaboration aspects
@@ -454,8 +478,9 @@ suggestions and identifies potential bugs using GPT-4 and static analysis.
 - Explain what you learned from the experience
 
 **Virtual Hackathons**:
+
 ```yaml
-location: "Virtual"  # For online hackathons
+location: 'Virtual' # For online hackathons
 ```
 
 ---
@@ -467,11 +492,13 @@ location: "Virtual"  # For online hackathons
 Use descriptive, URL-friendly names:
 
 **Good**:
+
 - `building-modern-web-apps.md`
 - `react-performance-tips.mdx`
 - `ecommerce-platform.md`
 
 **Avoid**:
+
 - `post1.md` (not descriptive)
 - `New Project.md` (spaces)
 - `article_2024.md` (underscores)
@@ -481,8 +508,8 @@ Use descriptive, URL-friendly names:
 Always use ISO 8601 format: `YYYY-MM-DD`
 
 ```yaml
-publishDate: "2024-01-25"
-startDate: "2023-06-15"
+publishDate: '2024-01-25'
+startDate: '2023-06-15'
 ```
 
 ### Consistent Frontmatter
@@ -506,8 +533,9 @@ src/content/blog/
 ```
 
 Reference with relative paths:
+
 ```yaml
-image: "./my-first-post-hero.png"
+image: './my-first-post-hero.png'
 ```
 
 ### Content Quality
@@ -523,11 +551,13 @@ image: "./my-first-post-hero.png"
 ### Frontmatter Validation Errors
 
 **Error**: "Required property missing"
+
 - Check `src/content.config.ts` for required fields
 - Ensure all required fields are present in frontmatter
 - Verify field names match exactly (case-sensitive)
 
 **Error**: "Invalid date format"
+
 - Use ISO format: `YYYY-MM-DD`
 - Ensure dates are quoted: `"2024-01-25"`
 - Check for typos in dates
@@ -542,6 +572,7 @@ image: "./my-first-post-hero.png"
 ### Type Errors
 
 If TypeScript shows errors in content:
+
 - Run `npm run astro check` to see detailed errors
 - Verify schema matches your frontmatter
 - Check that array fields use proper syntax: `["item1", "item2"]`

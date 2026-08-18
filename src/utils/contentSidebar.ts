@@ -1,21 +1,21 @@
-export type ContentSidebarPosition = "left" | "right";
+export type ContentSidebarPosition = 'left' | 'right'
 
 interface GlobalContentSidebarSettings {
-  showContentSidebar?: boolean;
-  contentSidebarPosition?: ContentSidebarPosition;
+  showContentSidebar?: boolean
+  contentSidebarPosition?: ContentSidebarPosition
 }
 
 interface ContentSidebarOverride {
-  discriminant: boolean;
+  discriminant: boolean
   value?: {
-    show?: boolean;
-    position?: ContentSidebarPosition;
-  } | null;
+    show?: boolean
+    position?: ContentSidebarPosition
+  } | null
 }
 
 export interface ResolvedContentSidebar {
-  show: boolean;
-  position: ContentSidebarPosition;
+  show: boolean
+  position: ContentSidebarPosition
 }
 
 export function resolveContentSidebar(
@@ -25,12 +25,12 @@ export function resolveContentSidebar(
   if (pageOverride?.discriminant && pageOverride.value) {
     return {
       show: pageOverride.value.show ?? true,
-      position: pageOverride.value.position ?? "right",
-    };
+      position: pageOverride.value.position ?? 'right'
+    }
   }
 
   return {
     show: globalSettings?.showContentSidebar ?? true,
-    position: globalSettings?.contentSidebarPosition ?? "right",
-  };
+    position: globalSettings?.contentSidebarPosition ?? 'right'
+  }
 }

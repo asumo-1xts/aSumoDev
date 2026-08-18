@@ -1,6 +1,6 @@
-import { defineCollection } from "astro:content";
-import { z } from "astro/zod";
-import { glob } from "astro/loaders";
+import { defineCollection } from 'astro:content'
+import { z } from 'astro/zod'
+import { glob } from 'astro/loaders'
 
 const contentSidebarSchema = z
   .object({
@@ -8,16 +8,16 @@ const contentSidebarSchema = z
     value: z
       .object({
         show: z.boolean().optional().default(true),
-        position: z.enum(["left", "right"]).optional().default("right"),
+        position: z.enum(['left', 'right']).optional().default('right')
       })
       .nullable()
-      .optional(),
+      .optional()
   })
-  .optional();
+  .optional()
 
 // Hero singleton
 const hero = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/hero" }),
+  loader: glob({ pattern: '**/*.{md,mdoc,yaml}', base: './src/content/hero' }),
   schema: ({ image }) =>
     z.object({
       name: z.string(),
@@ -29,24 +29,24 @@ const hero = defineCollection({
         z.object({
           url: z.string(),
           icon: z.enum([
-            "GitHub",
-            "LinkedIn",
-            "Twitter",
-            "Bluesky",
-            "Instagram",
-            "YouTube",
-            "Email",
-            "FolderCode",
+            'GitHub',
+            'LinkedIn',
+            'Twitter',
+            'Bluesky',
+            'Instagram',
+            'YouTube',
+            'Email',
+            'FolderCode'
           ]),
-          label: z.string(),
+          label: z.string()
         })
-      ),
-    }),
-});
+      )
+    })
+})
 
 // Work experience collection
 const work = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/work" }),
+  loader: glob({ pattern: '**/*.{md,mdoc,yaml}', base: './src/content/work' }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -56,15 +56,15 @@ const work = defineCollection({
       endDate: z.coerce.date().optional(),
       logo: image().optional(),
       link: z.url().optional(),
-      skills: z.array(z.string()).optional(),
-    }),
-});
+      skills: z.array(z.string()).optional()
+    })
+})
 
 // Education collection
 const education = defineCollection({
   loader: glob({
-    pattern: "**/*.{md,mdoc,yaml}",
-    base: "./src/content/education",
+    pattern: '**/*.{md,mdoc,yaml}',
+    base: './src/content/education'
   }),
   schema: ({ image }) =>
     z.object({
@@ -73,29 +73,29 @@ const education = defineCollection({
       startDate: z.coerce.date(),
       endDate: z.coerce.date().optional(),
       logo: image().optional(),
-      link: z.url().optional(),
-    }),
-});
+      link: z.url().optional()
+    })
+})
 
 // Project Categories collection
 const projectCategories = defineCollection({
   loader: glob({
-    pattern: "**/*.{md,mdoc,yaml}",
-    base: "./src/content/projectCategories",
+    pattern: '**/*.{md,mdoc,yaml}',
+    base: './src/content/projectCategories'
   }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
     icon: z.string().optional(),
-    sortOrder: z.number().optional().default(0),
-  }),
-});
+    sortOrder: z.number().optional().default(0)
+  })
+})
 
 // Projects collection
 const projects = defineCollection({
   loader: glob({
-    pattern: "**/*.{md,mdoc,yaml}",
-    base: "./src/content/projects",
+    pattern: '**/*.{md,mdoc,yaml}',
+    base: './src/content/projects'
   }),
   schema: ({ image }) =>
     z.object({
@@ -109,15 +109,15 @@ const projects = defineCollection({
       skills: z.array(z.string()),
       demoLink: z.url().optional(),
       sourceLink: z.url().optional(),
-      contentSidebar: contentSidebarSchema,
-    }),
-});
+      contentSidebar: contentSidebarSchema
+    })
+})
 
 // Hackathons collection
 const hackathons = defineCollection({
   loader: glob({
-    pattern: "**/*.{md,mdoc,yaml}",
-    base: "./src/content/hackathons",
+    pattern: '**/*.{md,mdoc,yaml}',
+    base: './src/content/hackathons'
   }),
   schema: ({ image }) =>
     z.object({
@@ -127,13 +127,13 @@ const hackathons = defineCollection({
       startDate: z.coerce.date(),
       endDate: z.coerce.date().optional(),
       logo: image().optional(),
-      sourceLink: z.url().optional(),
-    }),
-});
+      sourceLink: z.url().optional()
+    })
+})
 
 // Blog collection
 const blog = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/blog" }),
+  loader: glob({ pattern: '**/*.{md,mdoc,yaml}', base: './src/content/blog' }),
   schema: ({ image }) =>
     z.object({
       published: z.boolean().optional().default(true),
@@ -143,24 +143,27 @@ const blog = defineCollection({
       publishDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
       tags: z.array(z.string()).optional(),
-      contentSidebar: contentSidebarSchema,
-    }),
-});
+      contentSidebar: contentSidebarSchema
+    })
+})
 
 // About singleton
 const about = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/about" }),
+  loader: glob({ pattern: '**/*.{md,mdoc,yaml}', base: './src/content/about' }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
       photo: image().optional(),
-      link: z.url().optional(),
-    }),
-});
+      link: z.url().optional()
+    })
+})
 
 // General singleton
 const general = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/general" }),
+  loader: glob({
+    pattern: '**/*.{md,mdoc,yaml}',
+    base: './src/content/general'
+  }),
   schema: z.object({
     enableThemeSelector: z.boolean(),
     extraLinksEnabled: z.boolean(),
@@ -168,19 +171,19 @@ const general = defineCollection({
       z.object({
         link: z.string(),
         icon: z.enum([
-          "Flower2",
-          "BookOpen",
-          "FileText",
-          "CodeXml",
-          "Mail",
-          "Home",
-          "User",
-          "Briefcase",
-          "GraduationCap",
-          "Link",
+          'Flower2',
+          'BookOpen',
+          'FileText',
+          'CodeXml',
+          'Mail',
+          'Home',
+          'User',
+          'Briefcase',
+          'GraduationCap',
+          'Link'
         ]),
         label: z.string(),
-        displayOn: z.enum(["both", "dock", "fab"]).optional().default("both"),
+        displayOn: z.enum(['both', 'dock', 'fab']).optional().default('both')
       })
     ),
     showAboutSection: z.boolean(),
@@ -191,30 +194,33 @@ const general = defineCollection({
     showHackathonsSection: z.boolean(),
     showContactSection: z.boolean(),
     projectsLayout: z
-      .enum(["grid", "tabs-horizontal", "tabs-vertical"])
+      .enum(['grid', 'tabs-horizontal', 'tabs-vertical'])
       .optional()
-      .default("grid"),
+      .default('grid'),
     showContentSidebar: z.boolean().optional().default(true),
     contentSidebarPosition: z
-      .enum(["left", "right"])
+      .enum(['left', 'right'])
       .optional()
-      .default("right"),
-  }),
-});
+      .default('right')
+  })
+})
 
 // Contact singleton
 const contact = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdoc,yaml}", base: "./src/content/contact" }),
+  loader: glob({
+    pattern: '**/*.{md,mdoc,yaml}',
+    base: './src/content/contact'
+  }),
   schema: z.object({
-    icon: z.enum(["MessageCircleCode", "Mail", "Phone"]),
+    icon: z.enum(['MessageCircleCode', 'Mail', 'Phone']),
     linkUrl: z.url(),
     linkText: z.string(),
-    footerIcon: z.enum(["Pickaxe", "Hammer", "Heart"]),
+    footerIcon: z.enum(['Pickaxe', 'Hammer', 'Heart']),
     footerText: z.string(),
     footerLinkText: z.string(),
-    footerLinkUrl: z.url(),
-  }),
-});
+    footerLinkUrl: z.url()
+  })
+})
 
 export const collections = {
   hero,
@@ -226,5 +232,5 @@ export const collections = {
   blog,
   about,
   general,
-  contact,
-};
+  contact
+}

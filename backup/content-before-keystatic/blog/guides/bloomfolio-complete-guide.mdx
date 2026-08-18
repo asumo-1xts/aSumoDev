@@ -1,9 +1,9 @@
 ---
-title: "Bloomfolio Complete Guide: Building Your Portfolio"
-description: "A comprehensive guide to customizing and deploying your Bloomfolio portfolio template. Learn about configuration, components, content collections, and deployment."
-image: "../placeholder-blog.png"
-publishDate: "2025-11-01"
-tags: ["Guide", "Documentation", "Astro", "Portfolio"]
+title: 'Bloomfolio Complete Guide: Building Your Portfolio'
+description: 'A comprehensive guide to customizing and deploying your Bloomfolio portfolio template. Learn about configuration, components, content collections, and deployment.'
+image: '../placeholder-blog.png'
+publishDate: '2025-11-01'
+tags: ['Guide', 'Documentation', 'Astro', 'Portfolio']
 ---
 
 ## Introduction
@@ -125,14 +125,14 @@ All site configuration is centralized in `src/config.ts`. This file controls you
 
 ```typescript
 export const siteConfig: SiteConfig = {
-  name: "Your Name",
-  title: "Your Title/Tagline",
-  description: "Brief description of your portfolio",
-  avatar: "../assets/your-avatar.png",
-  location: "Your City, Country",
-  email: "your@email.com",
+  name: 'Your Name',
+  title: 'Your Title/Tagline',
+  description: 'Brief description of your portfolio',
+  avatar: '../assets/your-avatar.png',
+  location: 'Your City, Country',
+  email: 'your@email.com'
   // ... more config
-};
+}
 ```
 
 ### Social Links
@@ -158,10 +158,11 @@ All fields are optional - only include the platforms you use.
 Choose between theme selector (dropdown) or theme toggle (checkbox):
 
 ```typescript
-enableThemeSelector: true  // true = dropdown, false = checkbox
+enableThemeSelector: true // true = dropdown, false = checkbox
 ```
 
 Available themes:
+
 - `light` - Clean light theme (default)
 - `dark` - Dark theme
 - `synthwave` - Retro cyberpunk
@@ -219,8 +220,8 @@ Single entry describing who you are.
 
 ```markdown
 ---
-title: "About Me"
-photo: "https://your-photo-url.com/photo.jpg"
+title: 'About Me'
+photo: 'https://your-photo-url.com/photo.jpg'
 ---
 
 Write your bio here using Markdown...
@@ -234,12 +235,12 @@ Blog posts support both `.md` and `.mdx` formats.
 
 ```markdown
 ---
-title: "Post Title"
-description: "Brief description"
-image: "./featured-image.png"
-publishDate: "2024-01-25"
-updatedDate: "2024-01-26"  # Optional
-tags: ["Tag1", "Tag2"]      # Optional
+title: 'Post Title'
+description: 'Brief description'
+image: './featured-image.png'
+publishDate: '2024-01-25'
+updatedDate: '2024-01-26' # Optional
+tags: ['Tag1', 'Tag2'] # Optional
 ---
 
 Your blog post content...
@@ -253,14 +254,14 @@ Showcase your work and projects.
 
 ```markdown
 ---
-title: "Project Name"
-description: "Brief description"
-image: "./project-screenshot.png"
-startDate: "2023-01-15"
-endDate: "2023-06-30"      # Optional (omit for ongoing)
-skills: ["React", "TypeScript", "Node.js"]
-demoLink: "https://demo.example.com"    # Optional
-sourceLink: "https://github.com/..."    # Optional
+title: 'Project Name'
+description: 'Brief description'
+image: './project-screenshot.png'
+startDate: '2023-01-15'
+endDate: '2023-06-30' # Optional (omit for ongoing)
+skills: ['React', 'TypeScript', 'Node.js']
+demoLink: 'https://demo.example.com' # Optional
+sourceLink: 'https://github.com/...' # Optional
 ---
 
 Detailed project description...
@@ -274,12 +275,12 @@ Professional experience timeline.
 
 ```markdown
 ---
-title: "Company Name"
-subtitle: "Job Title"
-startDate: "2020-01-15"
-endDate: "2023-06-30"      # Optional (omit for current role)
-logo: "https://company-logo-url.com"  # Optional
-link: "https://company-website.com"   # Optional
+title: 'Company Name'
+subtitle: 'Job Title'
+startDate: '2020-01-15'
+endDate: '2023-06-30' # Optional (omit for current role)
+logo: 'https://company-logo-url.com' # Optional
+link: 'https://company-website.com' # Optional
 ---
 
 Job description and achievements...
@@ -293,12 +294,12 @@ Academic background.
 
 ```markdown
 ---
-title: "University Name"
-subtitle: "Degree/Course Name"
-startDate: "2016-09-01"
-endDate: "2020-06-15"      # Optional
-logo: "https://university-logo.com"  # Optional
-link: "https://university-website.com"  # Optional
+title: 'University Name'
+subtitle: 'Degree/Course Name'
+startDate: '2016-09-01'
+endDate: '2020-06-15' # Optional
+logo: 'https://university-logo.com' # Optional
+link: 'https://university-website.com' # Optional
 ---
 
 Additional education details...
@@ -312,13 +313,13 @@ Hackathon participation and wins.
 
 ```markdown
 ---
-title: "Hackathon Name"
-location: "City, Country"
-description: "Brief description"
-startDate: "2023-11-23"
-endDate: "2023-11-25"      # Optional
-logo: "https://hackathon-logo.com"  # Optional
-sourceLink: "https://github.com/project"  # Optional
+title: 'Hackathon Name'
+location: 'City, Country'
+description: 'Brief description'
+startDate: '2023-11-23'
+endDate: '2023-11-25' # Optional
+logo: 'https://hackathon-logo.com' # Optional
+sourceLink: 'https://github.com/project' # Optional
 ---
 
 Project details and achievements...
@@ -329,7 +330,9 @@ Project details and achievements...
 ### Layout Components
 
 #### Layout.astro
+
 Base layout for all pages. Includes:
+
 - Global styles
 - Theme controls
 - Page transitions
@@ -337,19 +340,24 @@ Base layout for all pages. Includes:
 - FAB Flower (if enabled)
 
 #### BlogLayout.astro
+
 Specialized layout for blog posts with:
+
 - Featured image
 - Post metadata (date, reading time)
 - Tags display
 - Navigation buttons
 
 #### ProjectLayout.astro
+
 Project detail page layout with custom styling.
 
 ### Section Components
 
 #### Hero.astro
+
 Main hero section with:
+
 - Avatar/logo
 - Name and title
 - Description
@@ -357,22 +365,28 @@ Main hero section with:
 - Social media links
 
 #### About.astro
+
 About section displaying bio with optional photo.
 
 #### Projects.astro
+
 Projects showcase section showing all projects in a grid.
 
 #### Blog.astro
+
 Latest blog posts section (shows 3 most recent).
 
 #### Timeline.astro
+
 Versatile component for Work and Education sections.
 
 **Variants**:
+
 - `timeline`: Visual timeline with icons
 - `list`: Clean list view
 
 **Props**:
+
 ```typescript
 {
   collection: "work" | "education"
@@ -385,15 +399,19 @@ Versatile component for Work and Education sections.
 ```
 
 #### Hackathons.astro
+
 Display hackathon participation with cards.
 
 #### Contact.astro
+
 Contact section with email display.
 
 ### Card Components
 
 #### ProjectCard.astro
+
 Individual project card with:
+
 - Project image
 - Title and description
 - Date period
@@ -401,7 +419,9 @@ Individual project card with:
 - Action buttons (Demo, Source, View)
 
 #### BlogCard.astro
+
 Blog post card with:
+
 - Image overlay effect
 - Title and description
 - Publish date
@@ -410,20 +430,25 @@ Blog post card with:
 ### Utility Components
 
 #### SkillBadge.astro
+
 Displays skill/tag badges with consistent styling.
 
 #### ThemeSelector.astro
+
 Dropdown menu for theme selection (6 themes).
 
 #### ThemeToggle.astro
+
 Simple checkbox for light/dark toggle.
 
 #### FabFlower.astro
+
 Floating action button with expandable link menu.
 
 ### Media Components
 
 #### Spotify.astro
+
 Embed Spotify tracks, albums, or playlists.
 
 ```jsx
@@ -431,6 +456,7 @@ Embed Spotify tracks, albums, or playlists.
 ```
 
 #### YouTube.astro
+
 Embed YouTube videos.
 
 ```jsx
@@ -440,6 +466,7 @@ Embed YouTube videos.
 ```
 
 #### Twitter.astro
+
 Embed tweets.
 
 ```jsx
@@ -455,13 +482,14 @@ Embed tweets.
 Bloomfolio uses Tailwind CSS 4 with the new CSS-first configuration approach. Global styles are defined in `src/styles/global.css`:
 
 ```css
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "daisyui";
 ```
 
 ### DaisyUI Components
 
 DaisyUI components are available throughout the project:
+
 - Cards
 - Buttons
 - Badges
@@ -502,21 +530,25 @@ npm run preview
 ### Deployment Platforms
 
 #### Vercel
+
 1. Connect your GitHub repository
 2. Vercel auto-detects Astro
 3. Deploy!
 
 #### Netlify
+
 1. Connect repository
 2. Build command: `npm run build`
 3. Publish directory: `dist`
 
 #### Cloudflare Pages
+
 1. Connect repository
 2. Build command: `npm run build`
 3. Build output directory: `dist`
 
 #### GitHub Pages
+
 1. Use GitHub Actions
 2. Configure Astro for GitHub Pages
 3. Push to deploy
@@ -524,21 +556,25 @@ npm run preview
 ## Troubleshooting
 
 ### Images not loading
+
 - Ensure images are in `src/assets/` or use proper URLs
 - Use `image()` helper in frontmatter for relative paths
 - Check image paths are correct
 
 ### Theme not changing
+
 - Clear browser cache
 - Check localStorage is enabled
 - Verify theme names match DaisyUI themes
 
 ### Build errors
+
 - Run `npm install` to ensure all dependencies are installed
 - Check TypeScript errors with `npm run astro check`
 - Verify all content frontmatter matches schemas
 
 ### Content not appearing
+
 - Check collection name matches folder name
 - Verify frontmatter schema is correct
 - Ensure files have `.md` or `.mdx` extension

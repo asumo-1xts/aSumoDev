@@ -5,17 +5,21 @@ This guide will help you set up and customize your Bloomfolio portfolio template
 ## 🚀 Quick Start
 
 1. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 2. **Start development server:**
+
    ```bash
    npm run dev
    ```
+
    Visit `http://localhost:4321` to see your portfolio.
 
 3. **Build for production:**
+
    ```bash
    npm run build
    ```
@@ -33,6 +37,7 @@ Bloomfolio includes **Keystatic CMS** - a modern, Git-based content editor that 
 ### What is Keystatic?
 
 Keystatic is a visual content management system that:
+
 - Provides a user-friendly editor at `/keystatic` when you run `npm run dev`
 - Stores content as files in your repository (not in a database)
 - Offers live preview of your content as you edit
@@ -40,6 +45,7 @@ Keystatic is a visual content management system that:
 - Generates type-safe TypeScript schemas automatically
 
 **Why Keystatic?**
+
 - No database setup required
 - Content lives in your Git repository
 - Visual editing without sacrificing developer control
@@ -56,10 +62,12 @@ Keystatic is a visual content management system that:
 Keystatic organizes content into **Singletons** (single items) and **Collections** (multiple entries):
 
 **Singletons:**
+
 - **Hero** - Your name, title, avatar, and social links
 - **About** - Personal bio with photo
 
 **Collections:**
+
 - **Blog** - Blog posts with rich media support
 - **Projects** - Portfolio projects with images and tech stacks
 - **Work** - Work experience timeline
@@ -92,6 +100,7 @@ src/content/
 ```
 
 This means you can:
+
 - Edit content in Keystatic OR directly in your code editor
 - Commit content changes with Git
 - Deploy content changes like any other code
@@ -113,6 +122,7 @@ To enable remote content editing through GitHub:
    - Callback URL: `http://localhost:4321/api/keystatic/github/oauth/callback`
 
 2. **Configure Environment Variables:**
+
    ```bash
    cp .env.example .env
    # Edit .env with your GitHub credentials
@@ -158,22 +168,22 @@ Edit `src/pages/index.astro` to update your personal information:
 
 ```javascript
 const portfolioData = {
-  name: "Your Name",
-  title: "Your Title",
-  description: "Your description",
-  avatarUrl: "/avatar.png",
-  location: "Your Location",
-  email: "your.email@example.com",
+  name: 'Your Name',
+  title: 'Your Title',
+  description: 'Your description',
+  avatarUrl: '/avatar.png',
+  location: 'Your Location',
+  email: 'your.email@example.com',
   socialLinks: {
-    github: "https://github.com/yourusername",
-    linkedin: "https://linkedin.com/in/yourusername",
-    twitter: "https://twitter.com/yourusername",
+    github: 'https://github.com/yourusername',
+    linkedin: 'https://linkedin.com/in/yourusername',
+    twitter: 'https://twitter.com/yourusername'
   },
   about: {
-    title: "About Me",
-    description: "Your about text",
-  },
-};
+    title: 'About Me',
+    description: 'Your about text'
+  }
+}
 ```
 
 ### 2. Add Your Avatar
@@ -190,13 +200,13 @@ Create markdown files in `src/content/work/`:
 
 ```markdown
 ---
-company: "Company Name"
-position: "Your Position"
-description: "What you did here"
-startDate: "2021-06-01"
-endDate: "2024-01-01"
-link: "https://company.com"
-logo: "/images/company-logo.png" # Optional
+company: 'Company Name'
+position: 'Your Position'
+description: 'What you did here'
+startDate: '2021-06-01'
+endDate: '2024-01-01'
+link: 'https://company.com'
+logo: '/images/company-logo.png' # Optional
 ---
 ```
 
@@ -206,13 +216,13 @@ Create markdown files in `src/content/education/`:
 
 ```markdown
 ---
-institution: "University Name"
-course: "Degree Name"
-description: "What you studied"
-startDate: "2015-09-01"
-endDate: "2019-05-30"
-link: "https://university.edu"
-logo: "/images/university-logo.png" # Optional
+institution: 'University Name'
+course: 'Degree Name'
+description: 'What you studied'
+startDate: '2015-09-01'
+endDate: '2019-05-30'
+link: 'https://university.edu'
+logo: '/images/university-logo.png' # Optional
 ---
 ```
 
@@ -222,14 +232,14 @@ Create markdown files in `src/content/projects/`:
 
 ```markdown
 ---
-title: "Project Name"
-description: "Project description"
-image: "./project-image.png"
-startDate: "2023-06-01"
-endDate: "2023-12-01"
-skills: ["React", "TypeScript", "Node.js"]
-demoLink: "https://demo.example.com"
-sourceLink: "https://github.com/yourusername/project"
+title: 'Project Name'
+description: 'Project description'
+image: './project-image.png'
+startDate: '2023-06-01'
+endDate: '2023-12-01'
+skills: ['React', 'TypeScript', 'Node.js']
+demoLink: 'https://demo.example.com'
+sourceLink: 'https://github.com/yourusername/project'
 ---
 ```
 
@@ -241,13 +251,13 @@ Create markdown files in `src/content/hackathons/`:
 
 ```markdown
 ---
-title: "Hackathon Name"
-location: "City, State"
-description: "What you built"
-startDate: "2023-11-23"
-endDate: "2023-11-25"
-sourceLink: "https://github.com/yourusername/hackathon-project"
-logo: "/images/hackathon-logo.png" # Optional
+title: 'Hackathon Name'
+location: 'City, State'
+description: 'What you built'
+startDate: '2023-11-23'
+endDate: '2023-11-25'
+sourceLink: 'https://github.com/yourusername/hackathon-project'
+logo: '/images/hackathon-logo.png' # Optional
 ---
 ```
 
@@ -257,13 +267,13 @@ Create markdown files in `src/content/blog/`:
 
 ```markdown
 ---
-title: "Post Title"
-description: "Post description"
-image: "./post-cover.png"
+title: 'Post Title'
+description: 'Post description'
+image: './post-cover.png'
 published: true # Set to false to keep the post as a private draft
-publishDate: "2024-01-15"
-updatedDate: "2024-01-20" # Optional
-tags: ["Web Development", "TypeScript"] # Optional
+publishDate: '2024-01-15'
+updatedDate: '2024-01-20' # Optional
+tags: ['Web Development', 'TypeScript'] # Optional
 ---
 
 # Your Blog Content

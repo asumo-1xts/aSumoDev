@@ -1,11 +1,11 @@
 ---
-title: "Screencial"
-description: "A web application enabling users to generate personalized, shareable screenshots for social media with customizable templates and design elements."
-image: "https://api.dicebear.com/9.x/glass/svg?seed=Brooklynn"
-startDate: "2023-07-01"
-endDate: "2024-06-31"
-skills: ["Laravel", "Livewire", "Stripe", "Tailwind CSS"]
-demoLink: "https://screencial.art"
+title: 'Screencial'
+description: 'A web application enabling users to generate personalized, shareable screenshots for social media with customizable templates and design elements.'
+image: 'https://api.dicebear.com/9.x/glass/svg?seed=Brooklynn'
+startDate: '2023-07-01'
+endDate: '2024-06-31'
+skills: ['Laravel', 'Livewire', 'Stripe', 'Tailwind CSS']
+demoLink: 'https://screencial.art'
 ---
 
 ## Overview
@@ -15,7 +15,9 @@ Screencial is a web-based platform designed to help users create stunning, profe
 ## Key Features
 
 ### Template Library
+
 Choose from multiple pre-designed templates optimized for different platforms:
+
 - **X (Twitter)** - Perfect for tweets and thread screenshots
 - **Instagram** - Stories and post formats
 - **LinkedIn** - Professional networking content
@@ -24,6 +26,7 @@ Choose from multiple pre-designed templates optimized for different platforms:
 - Coming soon: Reddit, WhatsApp, Telegram, TikTok, GitHub, and Testimonial templates
 
 ### Advanced Customization
+
 - **Multiple Aspect Ratios**: Square, Auto, Standard, Wide, and Mobile formats
 - **Real-time Live Editing**: See your changes instantly as you customize
 - **Avatar Options**: Custom uploads or randomly generated avatars
@@ -34,11 +37,13 @@ Choose from multiple pre-designed templates optimized for different platforms:
 ### Flexible Pricing
 
 **Free Tier** - Perfect for getting started:
+
 - Basic templates and customization
 - Standard resolution exports
 - 3 screenshots per day
 
 **Premium Tier** - €7/month (or €5/month billed annually):
+
 - All premium templates
 - Advanced customization options
 - Unlimited screenshots

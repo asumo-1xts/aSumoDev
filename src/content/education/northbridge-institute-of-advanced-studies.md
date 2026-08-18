@@ -6,6 +6,7 @@ endDate: 2019-05-30
 logo: '@assets/education/northbridge-institute-of-advanced-studies/logo.png'
 link: https://lauroguedes.dev
 ---
+
 - Lorem ipsum dolor sit amet.
 - Consectetur adipiscing elit.
 - Sed do eiusmod tempor incididunt.

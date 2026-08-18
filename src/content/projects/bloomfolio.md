@@ -17,6 +17,7 @@ skills:
 demoLink: https://bloomfolio-astro.vercel.app/
 sourceLink: https://github.com/lauroguedes/bloomfolio
 ---
+
 ## Overview
 
 Bloomfolio combines Astro 7's server-rendered architecture, Tailwind CSS 4 for flexible styling, and DaisyUI 5 for polished components to deliver a portfolio experience that is both visually refined and technically robust.

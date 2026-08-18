@@ -15,6 +15,7 @@ demoLink: https://screencial.art
 featured: true
 category: real-projects
 ---
+
 ## Overview
 
 Screencial is a web-based platform designed to help users create stunning, professional-looking screenshots for social media posts. With an intuitive interface and powerful customization options, it enables content creators, marketers, and developers to generate eye-catching visuals that enhance their online presence.

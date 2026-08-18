@@ -6,6 +6,7 @@ endDate: 2008-12-30
 logo: '@assets/education/stellaris-international-university/logo.png'
 link: https://lauroguedes.dev
 ---
+
 - Lorem ipsum dolor sit amet.
 - Consectetur adipiscing elit.
 - Sed do eiusmod tempor incididunt.

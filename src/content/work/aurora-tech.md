@@ -11,6 +11,7 @@ skills:
   - Laravel
   - Astro
 ---
+
 - Lorem ipsum dolor sit amet.
 - Consectetur adipiscing elit.
 - Sed do eiusmod tempor incididunt.

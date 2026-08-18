@@ -20,6 +20,7 @@ sourceLink: https://github.com/lauroguedes/mary-ui-starter-kit
 featured: true
 category: real-projects
 ---
+
 ## Project Overview
 
 Mary UI Laravel Starter Kit is a comprehensive, production-ready foundation for building modern web applications. It combines the robustness of Laravel 12.x with the elegance of Mary UI and the reactivity of Livewire Volt, providing developers with everything they need to kickstart their next project.
@@ -30,6 +31,7 @@ Mary UI Laravel Starter Kit is a comprehensive, production-ready foundation for 
 ![Mary UI](https://img.shields.io/badge/Mary_UI-2.x-blue?style=flat)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat)
 --
+
 ![Packagist Version](https://img.shields.io/packagist/v/lauroguedes/mary-ui-starter-kit?style=flat)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/lauroguedes/mary-ui-starter-kit?style=flat)
 

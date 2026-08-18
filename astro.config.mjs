@@ -1,12 +1,12 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config'
 
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
 
-import react from "@astrojs/react";
-import markdoc from "@astrojs/markdoc";
-import keystatic from "@keystatic/astro";
-import vercel from "@astrojs/vercel";
+import react from '@astrojs/react'
+import markdoc from '@astrojs/markdoc'
+import keystatic from '@keystatic/astro'
+import vercel from '@astrojs/vercel'
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,15 +15,15 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
-      include: ["@keystatic/core", "@keystatic/astro"],
-    },
+      include: ['@keystatic/core', '@keystatic/astro']
+    }
   },
 
-  output: "server",
+  output: 'server',
 
   adapter: vercel({
     webAnalytics: {
-      enabled: true,
-    },
-  }),
-});
+      enabled: true
+    }
+  })
+})

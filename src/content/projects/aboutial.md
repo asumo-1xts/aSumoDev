@@ -16,6 +16,7 @@ demoLink: https://aboutial.vercel.app/
 sourceLink: https://github.com/lauroguedes/aboutial
 category: experiments
 ---
+
 ## **Features**
 
 - 🎨 **Multiple Layout Styles**: Choose from Twitter/X, Instagram, or LinkedIn-inspired designs
