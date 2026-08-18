@@ -44,39 +44,6 @@ const hero = defineCollection({
     })
 })
 
-// Work experience collection
-const work = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdoc,yaml}', base: './src/content/work' }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      subtitle: z.string(),
-      location: z.string().optional(),
-      startDate: z.coerce.date(),
-      endDate: z.coerce.date().optional(),
-      logo: image().optional(),
-      link: z.url().optional(),
-      skills: z.array(z.string()).optional()
-    })
-})
-
-// Education collection
-const education = defineCollection({
-  loader: glob({
-    pattern: '**/*.{md,mdoc,yaml}',
-    base: './src/content/education'
-  }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      subtitle: z.string(),
-      startDate: z.coerce.date(),
-      endDate: z.coerce.date().optional(),
-      logo: image().optional(),
-      link: z.url().optional()
-    })
-})
-
 // Project Categories collection
 const projectCategories = defineCollection({
   loader: glob({
@@ -106,28 +73,9 @@ const projects = defineCollection({
       image: image(),
       startDate: z.coerce.date(),
       endDate: z.coerce.date().optional(),
-      skills: z.array(z.string()),
       demoLink: z.url().optional(),
       sourceLink: z.url().optional(),
       contentSidebar: contentSidebarSchema
-    })
-})
-
-// Hackathons collection
-const hackathons = defineCollection({
-  loader: glob({
-    pattern: '**/*.{md,mdoc,yaml}',
-    base: './src/content/hackathons'
-  }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      location: z.string(),
-      description: z.string(),
-      startDate: z.coerce.date(),
-      endDate: z.coerce.date().optional(),
-      logo: image().optional(),
-      sourceLink: z.url().optional()
     })
 })
 
@@ -147,17 +95,6 @@ const blog = defineCollection({
     })
 })
 
-// About singleton
-const about = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdoc,yaml}', base: './src/content/about' }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      photo: image().optional(),
-      link: z.url().optional()
-    })
-})
-
 // General singleton
 const general = defineCollection({
   loader: glob({
@@ -165,7 +102,6 @@ const general = defineCollection({
     base: './src/content/general'
   }),
   schema: z.object({
-    enableThemeSelector: z.boolean(),
     extraLinksEnabled: z.boolean(),
     extraLinks: z.array(
       z.object({
@@ -186,13 +122,7 @@ const general = defineCollection({
         displayOn: z.enum(['both', 'dock', 'fab']).optional().default('both')
       })
     ),
-    showAboutSection: z.boolean(),
     showProjectsSection: z.boolean(),
-    showBlogSection: z.boolean(),
-    showWorkSection: z.boolean(),
-    showEducationSection: z.boolean(),
-    showHackathonsSection: z.boolean(),
-    showContactSection: z.boolean(),
     projectsLayout: z
       .enum(['grid', 'tabs-horizontal', 'tabs-vertical'])
       .optional()
@@ -205,32 +135,10 @@ const general = defineCollection({
   })
 })
 
-// Contact singleton
-const contact = defineCollection({
-  loader: glob({
-    pattern: '**/*.{md,mdoc,yaml}',
-    base: './src/content/contact'
-  }),
-  schema: z.object({
-    icon: z.enum(['MessageCircleCode', 'Mail', 'Phone']),
-    linkUrl: z.url(),
-    linkText: z.string(),
-    footerIcon: z.enum(['Pickaxe', 'Hammer', 'Heart']),
-    footerText: z.string(),
-    footerLinkText: z.string(),
-    footerLinkUrl: z.url()
-  })
-})
-
 export const collections = {
   hero,
-  work,
-  education,
   projectCategories,
   projects,
-  hackathons,
   blog,
-  about,
-  general,
-  contact
+  general
 }

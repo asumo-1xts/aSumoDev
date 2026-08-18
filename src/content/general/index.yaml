@@ -1,7 +1,6 @@
 projectsLayout: tabs-horizontal
 showContentSidebar: true
 contentSidebarPosition: right
-enableThemeSelector: true
 extraLinksEnabled: true
 extraLinks:
   - link: /blog/guides/bloomfolio-complete-guide-building-your-portfolio
@@ -20,10 +19,4 @@ extraLinks:
     icon: CodeXml
     label: GitHub Repo
     displayOn: both
-showAboutSection: true
 showProjectsSection: true
-showBlogSection: true
-showWorkSection: true
-showEducationSection: true
-showHackathonsSection: true
-showContactSection: true

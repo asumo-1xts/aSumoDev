@@ -1,19 +1,7 @@
 ---
 import "../styles/global.css";
-import ThemeToggle from "../components/ThemeToggle.astro";
-import ThemeSelector from "../components/ThemeSelector.astro";
-import FabFlower from "../components/FabFlower.astro";
 import Dock from "../components/Dock.astro";
 import { ClientRouter } from "astro:transitions";
-import { getEntry } from "astro:content";
-
-// Load general singleton
-const generalEntry = await getEntry("general", "index");
-if (!generalEntry) {
-  throw new Error('Missing required content entry: "general/index"');
-}
-
-const general = generalEntry.data;
 
 interface Props {
   title?: string;
@@ -50,7 +38,7 @@ const origin = Astro.url.origin;
 ---
 
 <!doctype html>
-<html lang="en" transition:animate={pageTransition}>
+<html lang="en" data-theme="dark" transition:animate={pageTransition}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -76,31 +64,7 @@ const origin = Astro.url.origin;
     <meta name="twitter:image" content={`${origin}/images/og_home.png`} />
   </head>
   <body class="min-h-screen">
-    <!-- Theme Controls - Fixed Position -->
-    <div class="fixed top-4 right-4 z-50">
-      {general.enableThemeSelector ? <ThemeSelector /> : <ThemeToggle />}
-    </div>
-
     <slot />
-
-    {
-      general.extraLinksEnabled && (
-        <>
-          {/* FabFlower for desktop - show 'both' and 'fab' items */}
-          <FabFlower
-            extraLinks={general.extraLinks.filter(
-              (link) => link.displayOn !== "dock"
-            )}
-          />
-          {/* Dock for mobile - show 'both' and 'dock' items */}
-          <Dock
-            extraLinks={general.extraLinks.filter(
-              (link) => link.displayOn !== "fab"
-            )}
-          />
-        </>
-      )
-    }
 
     <!-- Smooth Scroll -->
     <style is:global>
