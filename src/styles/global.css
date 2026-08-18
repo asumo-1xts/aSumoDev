@@ -3,3 +3,24 @@
 @plugin "daisyui" {
   themes: wireframe --default;
 }
+
+@font-face {
+  font-family: 'Formera';
+  src: url('./fonts/Formera-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Gonunne';
+  src: url('./fonts/GLT-GonunneObsolete.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Neon';
+  src: url('./fonts/MoralerspaceNeonHW-Regular.woff2') format('woff2');
+}
+
+@theme {
+  --font-sans: 'Formera', sans-serif;
+  --font-serif: 'Gonunne', serif;
+  --font-mono: 'Neon', monospace;
+}
