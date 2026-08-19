@@ -1,18 +1,12 @@
 name: asumo.dev
-title: アイツは何なんだ
-description: An office worker
+title: aSumo / ｱｽﾓ
+description: アイツは何なんだ
 avatar: '@assets/hero/avatar.jpg'
 location: 🇯🇵 Hamamatsu
 socialLinks:
-  - url: mailto:hello@example.com
-    icon: Email
-    label: Email
-  - url: https://github.com/lauroguedes
-    icon: GitHub
-    label: GitHub
-  - url: https://twitter.com/leowg
+  - url: https://x.com/asumo_1xts
     icon: Twitter
     label: X (Twitter)
-  - url: https://youtube.com/leowgweb
-    icon: YouTube
-    label: YouTube
+  - url: https://github.com/asumo-1xts
+    icon: GitHub
+    label: GitHub
