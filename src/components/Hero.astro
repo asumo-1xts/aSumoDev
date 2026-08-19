@@ -6,11 +6,11 @@ import { parseInlineLinks } from "../utils/parseInlineLinks";
 
 interface Props {
   hero: {
+    avatar: ImageMetadata | string;
     name: string;
     title: string;
-    description: string;
-    avatar: ImageMetadata | string;
     location?: string;
+    description: string;
     socialLinks: Array<{
       url: string;
       icon: string;
@@ -25,7 +25,6 @@ const { hero } = Astro.props;
 <section class="hero min-h-screen">
   <div class="hero-content flex-col lg:flex-row-reverse max-w-7xl">
     <div>
-      <!-- content -->
       <figure class="max-w-100 w-48 lg:w-64 mask mask-squircle">
         {
           typeof hero.avatar === "string" ? (
@@ -35,19 +34,10 @@ const { hero } = Astro.props;
           )
         }
       </figure>
-      <!-- 8 empty divs needed for the 3D effect -->
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
     </div>
     <div class="max-w-2xl text-center lg:text-left">
       <h1 class="text-4xl lg:text-5xl font-bold mb-4">
-        asumo.dev
+        {hero.name}
       </h1>
       <p class="skeleton skeleton-text text-xl text-base-content/80 mb-2" set:html={parseInlineLinks(hero.title)} />
       {

@@ -1,8 +1,8 @@
+avatar: '@assets/hero/avatar.jpg'
 name: asumo.dev
 title: aSumo / ｱｽﾓ
-description: アイツは何なんだ
-avatar: '@assets/hero/avatar.jpg'
 location: 🇯🇵 Hamamatsu
+description: 1xtelescope@gmail.com
 socialLinks:
   - url: https://x.com/asumo_1xts
     icon: Twitter
