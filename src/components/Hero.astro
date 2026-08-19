@@ -28,7 +28,7 @@ const { hero } = Astro.props;
     <div>
       {
         hero.message && (
-          <p class="skeleton skeleton-text text-xl text-base-content/80 mb-2 text-center" set:html={parseInlineLinks(hero.message)} />
+          <p class="text-xl text-base-content/80 mb-2 text-center" set:html={parseInlineLinks(hero.message)} />
         )
       }
       <figure class="max-w-100 w-48 lg:w-64 my-4 mask mask-squircle">
@@ -45,7 +45,7 @@ const { hero } = Astro.props;
       <h1 class="text-4xl lg:text-5xl font-bold mb-4">
         {hero.name}
       </h1>
-      <p class="skeleton skeleton-text text-xl text-base-content/80 mb-2" set:html={parseInlineLinks(hero.title)} />
+      <p class="text-xl text-base-content/80 mb-2" set:html={parseInlineLinks(hero.title)} />
       {
         hero.location && (
           <p class="text-base-content/60 mb-4">{hero.location}</p>
