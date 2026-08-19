@@ -16,16 +16,7 @@ const hero = defineCollection({
       socialLinks: z.array(
         z.object({
           url: z.string(),
-          icon: z.enum([
-            'GitHub',
-            'LinkedIn',
-            'Twitter',
-            'Bluesky',
-            'Instagram',
-            'YouTube',
-            'Email',
-            'FolderCode'
-          ]),
+          icon: z.enum(['GitHub', 'Twitter']),
           label: z.string()
         })
       )
@@ -57,25 +48,6 @@ const general = defineCollection({
     base: './src/content/general'
   }),
   schema: z.object({
-    extraLinksEnabled: z.boolean(),
-    extraLinks: z.array(
-      z.object({
-        link: z.string(),
-        icon: z.enum([
-          'Flower2',
-          'BookOpen',
-          'FileText',
-          'CodeXml',
-          'Mail',
-          'Home',
-          'User',
-          'Briefcase',
-          'GraduationCap',
-          'Link'
-        ]),
-        label: z.string()
-      })
-    ),
     showProjectsSection: z.boolean(),
     projectsLayout: z
       .enum(['grid', 'tabs-horizontal', 'tabs-vertical'])

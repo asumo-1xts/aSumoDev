@@ -57,13 +57,7 @@ export default config({
               description: 'Select a social media icon',
               options: [
                 { label: 'GitHub', value: 'GitHub' },
-                { label: 'LinkedIn', value: 'LinkedIn' },
-                { label: 'Twitter/X', value: 'Twitter' },
-                { label: 'Bluesky', value: 'Bluesky' },
-                { label: 'Instagram', value: 'Instagram' },
-                { label: 'YouTube', value: 'YouTube' },
-                { label: 'Email', value: 'Email' },
-                { label: 'CodeTips (Folder)', value: 'FolderCode' }
+                { label: 'X', value: 'Twitter' }
               ],
               defaultValue: 'GitHub'
             }),
@@ -117,45 +111,6 @@ export default config({
           options: contentSidebarPositionOptions,
           defaultValue: 'right'
         }),
-        extraLinks: fields.array(
-          fields.object({
-            link: fields.text({
-              label: 'Link URL',
-              description: 'URL or path (e.g., /blog or https://example.com)',
-              validation: { isRequired: true }
-            }),
-            icon: fields.select({
-              label: 'Icon',
-              description: 'Select an icon from Lucide icon library',
-              options: [
-                { label: 'Flower (Flower2)', value: 'Flower2' },
-                { label: 'Book (BookOpen)', value: 'BookOpen' },
-                { label: 'File (FileText)', value: 'FileText' },
-                { label: 'Code (CodeXml)', value: 'CodeXml' },
-                { label: 'Mail (Mail)', value: 'Mail' },
-                { label: 'Home (Home)', value: 'Home' },
-                { label: 'User (User)', value: 'User' },
-                { label: 'Briefcase (Briefcase)', value: 'Briefcase' },
-                {
-                  label: 'Graduation Cap (GraduationCap)',
-                  value: 'GraduationCap'
-                },
-                { label: 'Link (Link)', value: 'Link' }
-              ],
-              defaultValue: 'Link'
-            }),
-            label: fields.text({
-              label: 'Tooltip Label',
-              description: 'Label shown on hover',
-              validation: { isRequired: true }
-            })
-          }),
-          {
-            label: 'Extra Links',
-            itemLabel: (props) => props.fields.label.value || 'New Link',
-            description: 'Links to display in the floating action button'
-          }
-        ),
         showProjectsSection: fields.checkbox({
           label: 'Show Projects Section',
           defaultValue: true
