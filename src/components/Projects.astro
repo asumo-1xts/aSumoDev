@@ -1,12 +1,12 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import ProjectCard from "./ProjectCard.astro";
 
 const projectEntries = await getCollection("projects");
 
 // Filter featured projects, sort by start date (most recent first), limit to 3
 const featuredProjects = projectEntries
-  .filter((project) => project.data.featured === true)
+  .filter((project: CollectionEntry<"projects">) => project.data.featured === true)
   .slice(0, 3);
 ---
 
@@ -25,7 +25,7 @@ const featuredProjects = projectEntries
         </div>
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredProjects.map((project) => (
+          {featuredProjects.map((project: CollectionEntry<"projects">) => (
             <ProjectCard project={project} />
           ))}
         </div>
