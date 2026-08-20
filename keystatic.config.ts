@@ -154,7 +154,7 @@ export default config({
           publicPath: '@assets/projects/',
           validation: { isRequired: true },
           description: 'Main project image'
-        })
+        }),
         sourceLink: fields.url({
           label: 'Source Code Link',
           description: 'GitHub or repository URL (optional)'
