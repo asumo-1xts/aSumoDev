@@ -1,4 +1,4 @@
-# aSumoDev
+# asumo.dev
 
 See: https://asumo.dev/
 
