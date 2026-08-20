@@ -7,7 +7,7 @@ import { parseInlineLinks } from "../utils/parseInlineLinks";
 interface Props {
   hero: {
     message?: string;
-    avatar: ImageMetadata | string;
+    avatar: ImageMetadata;
     name: string;
     title: string;
     location?: string;
@@ -33,11 +33,7 @@ const { hero } = Astro.props;
       }
       <figure class="max-w-100 w-48 lg:w-64 my-4 mask mask-squircle">
         {
-          typeof hero.avatar === "string" ? (
-            <img src={hero.avatar} alt={hero.name} />
-          ) : (
-            <Image src={hero.avatar} alt={hero.name} />
-          )
+          <Image src={hero.avatar} alt={hero.name} />
         }
       </figure>
     </div>
