@@ -4,7 +4,6 @@ import Hero from "../components/Hero.astro";
 import Projects from "../components/Projects.astro";
 import { getEntry } from "astro:content";
 
-// Load Hero singleton
 const heroEntry = await getEntry("hero", "index");
 if (!heroEntry) {
   throw new Error('Missing required content entry: "hero/index"');
