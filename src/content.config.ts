@@ -36,7 +36,6 @@ const projects = defineCollection({
       title: z.string(),
       description: z.string(),
       image: image(),
-      demoLink: z.url().optional(),
       sourceLink: z.url().optional()
     })
 })

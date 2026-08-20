@@ -154,11 +154,7 @@ export default config({
           publicPath: '@assets/projects/',
           validation: { isRequired: true },
           description: 'Main project image'
-        }),
-        demoLink: fields.url({
-          label: 'Demo Link',
-          description: 'Live demo URL (optional)'
-        }),
+        })
         sourceLink: fields.url({
           label: 'Source Code Link',
           description: 'GitHub or repository URL (optional)'
