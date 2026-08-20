@@ -24,13 +24,14 @@ const hero = defineCollection({
 
 const projects = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    image: z.string(),
-    sourceLink: z.url(),
-    featured: z.boolean().default(false)
-  })
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      image: image(),
+      sourceLink: z.url(),
+      featured: z.boolean().default(false)
+    })
 })
 
 export const collections = { hero, projects }
