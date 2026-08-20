@@ -10,13 +10,6 @@ if (!heroEntry) {
   throw new Error('Missing required content entry: "hero/index"');
 }
 
-// Load General singleton
-const generalEntry = await getEntry("general", "index");
-if (!generalEntry) {
-  throw new Error('Missing required content entry: "general/index"');
-}
-
-const general = generalEntry.data;
 ---
 
 <Layout
@@ -25,8 +18,6 @@ const general = generalEntry.data;
 >
   <main>
     <Hero hero={heroEntry.data} />
-    <div>
-      {general.showProjectsSection && <Projects />}
-    </div>
+    <Projects />
   </main>
 </Layout>
