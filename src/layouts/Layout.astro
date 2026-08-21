@@ -4,11 +4,25 @@ import "../styles/global.css";
 const title = "aSumo / ｱｽﾓ";
 const description = "アイツは何なんだ";
 const origin = "https://asumo.dev";
+
+const ga4TrackingCode = `
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2KLX74KXW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-M2KLX74KXW');
+  </script>
+`;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <Fragment set:html={ga4TrackingCode} />
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
