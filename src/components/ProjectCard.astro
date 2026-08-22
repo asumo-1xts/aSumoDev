@@ -23,6 +23,12 @@ const { project} = Astro.props;
         class="w-full h-full object-cover"
         width={600}
         height={400}
+        sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+        loading="lazy"
+        decoding="async"
+        fetchpriority="low"
+        format="webp"
+        quality={78}
       />
     </figure>
     <div class="card-body ">

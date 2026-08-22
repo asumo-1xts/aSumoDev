@@ -33,7 +33,17 @@ const { hero } = Astro.props;
       }
       <figure class="max-w-100 w-48 lg:w-64 my-4 mask mask-squircle">
         {
-          <Image src={hero.avatar} alt={hero.name} />
+          <Image
+            src={hero.avatar}
+            alt={hero.name}
+            width={256}
+            height={256}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            format="webp"
+            quality={80}
+          />
         }
       </figure>
     </div>

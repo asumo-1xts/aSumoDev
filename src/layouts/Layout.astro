@@ -4,25 +4,12 @@ import "../styles/global.css";
 const title = "aSumo / ｱｽﾓ";
 const description = "アイツは何なんだ";
 const origin = "https://asumo.dev";
-
-const ga4TrackingCode = `
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2KLX74KXW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-M2KLX74KXW');
-  </script>
-`;
+const gaMeasurementId = "G-M2KLX74KXW";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <Fragment set:html={ga4TrackingCode} />
-    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
@@ -46,6 +33,33 @@ const ga4TrackingCode = `
   </head>
   <body class="min-h-screen">
     <slot />
+
+    <script is:inline define:vars={{ gaMeasurementId }}>
+      (() => {
+        if (navigator.doNotTrack === "1") return;
+
+        const loadAnalytics = () => {
+          const script = document.createElement("script");
+          script.async = true;
+          script.src = `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`;
+          document.head.appendChild(script);
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            window.dataLayer.push(arguments);
+          }
+
+          gtag("js", new Date());
+          gtag("config", gaMeasurementId);
+        };
+
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(loadAnalytics, { timeout: 3000 });
+        } else {
+          window.setTimeout(loadAnalytics, 1500);
+        }
+      })();
+    </script>
 
     <!-- Smooth Scroll -->
     <style is:global>

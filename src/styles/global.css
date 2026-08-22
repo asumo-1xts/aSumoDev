@@ -7,14 +7,9 @@
 @font-face {
   font-family: 'Formera';
   src: url('./fonts/Formera-Regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Neon';
-  src: url('./fonts/MoralerspaceNeonHW.woff2') format('woff2');
+  font-display: swap;
 }
 
 @theme {
   --font-sans: 'Formera', sans-serif;
-  --font-mono: 'Neon', monospace;
 }
