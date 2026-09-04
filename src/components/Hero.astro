@@ -59,8 +59,8 @@ const { hero } = Astro.props;
         )
       }
       <p class="text-lg leading-relaxed mb-6">
-        <span set:html={parseInlineLinks(`📧${hero.email}`)} /><br />
-        <span set:html={parseInlineLinks(`🎮${hero.discord}`)} />
+        <span set:html={parseInlineLinks(`📧 ${hero.email}`)} /><br />
+        <span set:html={parseInlineLinks(`🎮 ${hero.discord}`)} />
       </p>
       <div
         class="grid grid-cols-4 gap-2 justify-items-center lg:flex lg:gap-4 lg:justify-start"
