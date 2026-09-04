@@ -11,7 +11,8 @@ const hero = defineCollection({
       name: z.string(),
       title: z.string(),
       location: z.string().optional(),
-      description: z.string(),
+      email: z.string(),
+      discord: z.string(),
       socialLinks: z.array(
         z.object({
           url: z.url(),

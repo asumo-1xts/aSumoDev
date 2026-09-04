@@ -11,7 +11,8 @@ interface Props {
     name: string;
     title: string;
     location?: string;
-    description: string;
+    email: string;
+    discord: string;
     socialLinks: Array<{
       url: string;
       icon: string;
@@ -57,7 +58,10 @@ const { hero } = Astro.props;
           <p class="text-base-content/60 mb-4">{hero.location}</p>
         )
       }
-      <p class="text-lg leading-relaxed mb-6" set:html={parseInlineLinks(hero.description)} />
+      <p class="text-lg leading-relaxed mb-6">
+        <span set:html={parseInlineLinks(`📧${hero.email}`)} /><br />
+        <span set:html={parseInlineLinks(`🎮${hero.discord}`)} />
+      </p>
       <div
         class="grid grid-cols-4 gap-2 justify-items-center lg:flex lg:gap-4 lg:justify-start"
       >

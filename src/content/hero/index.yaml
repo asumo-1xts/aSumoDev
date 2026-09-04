@@ -3,7 +3,8 @@ avatar: '../../assets/avatar.webp'
 name: asumo.dev
 title: aSumo / ｱｽﾓ
 location: 🇯🇵 Hamamatsu
-description: 📧me@asumo.dev / 🎮@asumo_1xts
+email: 'me@asumo.dev'
+discord: '@asumo_1xts'
 socialLinks:
   - url: https://x.com/asumo_1xts
     icon: Twitter
