@@ -1,4 +1,4 @@
-# asumo.dev
+# asumo.dev [![MIT](https://img.shields.io/badge/License-MIT-green)](/LICENSE)
 
 **アイツは何なんだ**
 
